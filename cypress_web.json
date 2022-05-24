@@ -1,0 +1,32 @@
+{
+    "viewportWidth": 1200,
+    "viewportHeight": 860,
+    "defaultCommandTimeout": 100000,
+    "video": false,
+    "screenshot": false,
+    "reporter": "mochawesome",
+    "screenshotsFolder": "cypress/report/assets",
+    "requestTimeout" : 100000,
+    "reporterOptions": 
+    {
+      "reportDir": "cypress/report/Collegedunia-report",
+      "reportFilename": "CollegeduniaReport",
+      "overwrite": false,
+      "json": true,
+      "html": false,
+      "charts": true
+    },
+    "compilerOptions": {
+      "types": ["cypress", "cypress-wait-until"]
+    },
+    "db": {
+      "userName": "developer_user",
+      "password": "leLtfDeeEVcehLCoiPk@ewRUu%gUnms%EyrYvqxZ",
+      "server": "https://101.53.139.124:3306",
+      "options": {
+          "database": "collegedunia_test",
+          "encrypt": true,
+          "rowCollectionOnRequestCompletion" : true
+      }
+    }
+}

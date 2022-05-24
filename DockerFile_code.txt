@@ -1,0 +1,18 @@
+FROM cypress/base:10
+RUN apt-get update \
+    && apt install python3-pip -y \
+    && pip3 install awscli --upgrade --user \
+    && apt-get install -y xvfb zip ca-certificates \
+    && apt-get install -y libnss3-dev libasound2 libxss1 libappindicator3-1 libindicator7 gconf-service libgconf-2-4 libpango1.0-0 xdg-utils fonts-liberation libgbm1 \
+    && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && dpkg -i google-chrome*.deb \
+    && rm google-chrome*.deb \
+    && wget -N http://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip \
+    && unzip chromedriver_linux64.zip \
+    && chmod +x chromedriver \
+    && cp chromedriver /usr/local/bin \
+    && rm chromedriver_linux64.zip \
+    && rm chromedriver \
+    && npm install \
+    && npm i --save-dev cypress-mochawesome-reporter \
+    && npm install mochawesome-merge --save-dev
